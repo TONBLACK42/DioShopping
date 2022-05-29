@@ -1,8 +1,8 @@
+import { Grid, List, makeStyles, Paper, Typography } from '@material-ui/core/';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Paper, Grid, Typography, List, makeStyles } from '@material-ui/core/';
-import Item from '../components/Item';
 import Card from '../components/Card';
+import Item from '../components/Item';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,10 +38,8 @@ const HomePage = () => {
     let count = { };
 
     for(let i = 0; i < arrayCategory.length; i++){
-        {
-            let key = arrayCategory[i];
-            count[key] = (count[key] ? count[key] + 1 : 1)
-        }
+        let key = arrayCategory[i];
+        count[key] = (count[key] ? count[key] + 1 : 1)
     }
 
     return(

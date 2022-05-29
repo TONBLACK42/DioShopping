@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
-import { Grid, Button, TextField } from '@material-ui/core/';
+import { Button, Grid, TextField } from '@material-ui/core/';
+import { useEffect, useState } from 'react';
+
 
 const Contatos = () => {
 
-    const url = 'http://localhost:5000/message'
+    //const url = 'http://localhost:5000/message'
+    const url = 'http://localhost:3002/message'
     const [message, setMessage] = useState([]);
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
@@ -11,11 +13,21 @@ const Contatos = () => {
     const [render, setRender] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    useEffect(async () => {
+   useEffect(async () => {
         const response = await fetch(url)
         const data = await response.json();
         setMessage(data);
     }, [render])
+
+    /*useEffect(() => {
+        async function fetchData()
+        {
+            const response = await fetch(url)
+            const data = await response.json();
+            setMessage(data);
+        }
+        fetchData();
+    }, [render])*/
 
     const sendMessage = () => {
         setValidator(false);

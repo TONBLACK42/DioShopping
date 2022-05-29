@@ -1,7 +1,8 @@
+import { Button, Grid, makeStyles, Paper, Typography } from '@material-ui/core/';
 import React from 'react';
-import { Paper, Grid, Typography, Button, makeStyles} from '@material-ui/core/';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import cartActions from './store/actions/cart';
+
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -27,7 +28,7 @@ const Card = ({ product, children }) => {
                     <Typography variant='subtitle1'>
                         R$ {product.price.toFixed(2)}
                     </Typography>
-                    </Grid>
+                </Grid>
                 
                 <Button 
                     variant="contained"
